@@ -6,7 +6,6 @@ import type { OrderStatus, Product, Profile, Station, TeaOrder } from './types';
 import { nextStatus, nextStatusButtons, statusNames } from './types';
 
 const baseUrl = () => new URL(import.meta.env.BASE_URL, window.location.origin).href;
-const panelUrl = () => `${baseUrl()}?panel=ocak`;
 const formatTime = (date: string) => new Intl.DateTimeFormat('tr-TR', { hour: '2-digit', minute: '2-digit' }).format(new Date(date));
 const formatDate = (date: string) => new Intl.DateTimeFormat('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date(date));
 function friendlyError(error: unknown) { return error instanceof Error ? error.message : 'İşlem tamamlanamadı. Tekrar deneyin.'; }
